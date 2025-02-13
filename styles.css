@@ -15,7 +15,7 @@ body {
   font-family: "Pacifico", serif;
 }
 .hh {
-  -webkit-text-stroke: 1px #723444;
+  /* -webkit-text-stroke: 1px #723444; */
   font-weight: 900;
   font-size: 40px;
   padding: 6px;
@@ -23,7 +23,7 @@ body {
   border-radius: 15px;
 }
 .pp {
-  -webkit-text-stroke: 1px #723444;
+  /* -webkit-text-stroke: 1px #723444; */
   font-size: 28px;
   font-style: oblique;
   font-weight: 700;
