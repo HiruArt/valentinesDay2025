@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="Mainprompt">
+            <!-- <img class="image" src="images/cute.gif"></img> -->
+            
+            <img class="image" src="images/quest1.gif"></img>
+            <div class="text">
+              <h1 class="hh" id="name">А ти мій котик</h1>
+              <p class="pp" id="question">Ти будеш моєю Варенькою? </p>
+            </div>
+            <div class="buttons">
+                <button class="button no" id="no-button" onclick="showMessage('No')">Ні</button>
+                <button class="button yes"  onclick="showMessage('Yes')" id="yesButton">Так</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+      const button = document.getElementById('no-button');
+
+      // Add event listener for mouseenter event
+      button.addEventListener('mouseenter', function() {
+          showMessage('No')
+      });
+
+      function showMessage(response) {
+  if (response === "No") {
+    const noButton = document.getElementById("no-button");
+    const container = document.querySelector(".container");
+    const maxWidth = window.innerWidth - noButton.offsetWidth;
+    const maxHeight = window.innerHeight - noButton.offsetHeight;
+
+    noButton.style.position = "absolute";
+
+    document.getElementsByClassName("image")[0].src = "images/a-u-shur.gif";
+
+    const randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
+    const randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
+
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
+
+    document.getElementById("question").textContent =
+      "Шо це ти вдумала, кохана? Будеш чи да?";
+    document.getElementById("name").style.display = "none";
+
+  }
+
+  if (response === "Yes") {
+    document.getElementById("name").remove();
+    document.getElementById("no-button").remove();
+
+    const yesMessage = document.getElementById("question");
+    yesMessage.textContent = "Ти моя мурмуляда 😘";
+    yesMessage.style.display = "block";
+    yesMessage.style.fontStyle = "normal";
+    document.getElementsByClassName("image")[0].src = "images/kiss1.gif";
+
+    document.getElementById("yesButton").remove();
+  }
+}
+    </script>
+</body>
+
+</html>
